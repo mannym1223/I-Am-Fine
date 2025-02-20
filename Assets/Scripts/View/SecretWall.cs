@@ -22,12 +22,16 @@ namespace Platformer.Mechanics
 		private Coroutine enableXrayRoutine;
 		private Coroutine disableXrayRoutine;
 
-		// Start is called before the first frame update
 		private void Awake()
 		{
 			spriteRenderer = GetComponent<SpriteRenderer>();
 			collider = GetComponent<Collider2D>();
 			cachedAlpha = spriteRenderer.color.a;
+
+			// wall can be easily seen in editor, then reset in game
+			Color color = spriteRenderer.color;
+			color.a = 1f;
+			spriteRenderer.color = color;
 		}
 
 		private void OnTriggerEnter2D(Collider2D collision)
