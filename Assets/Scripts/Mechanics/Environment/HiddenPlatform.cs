@@ -1,5 +1,3 @@
-using System.Collections;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace Platformer.Mechanics
