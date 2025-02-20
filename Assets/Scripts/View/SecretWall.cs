@@ -16,9 +16,6 @@ namespace Platformer.Mechanics
 		protected SpriteRenderer spriteRenderer;
 		protected new Collider2D collider;
 
-		// save original alpha value of sprite
-		private float cachedAlpha;
-
 		private Coroutine enableXrayRoutine;
 		private Coroutine disableXrayRoutine;
 
@@ -26,7 +23,6 @@ namespace Platformer.Mechanics
 		{
 			spriteRenderer = GetComponent<SpriteRenderer>();
 			collider = GetComponent<Collider2D>();
-			cachedAlpha = spriteRenderer.color.a;
 
 			// wall can be easily seen in editor, then reset in game
 			Color color = spriteRenderer.color;
@@ -89,7 +85,7 @@ namespace Platformer.Mechanics
 
 		private IEnumerator DisableXray()
 		{
-			while (spriteRenderer.color.a < cachedAlpha)
+			while (spriteRenderer.color.a < 1)
 			{
 				Color newColor = spriteRenderer.color;
 				newColor.a += 0.01f;
