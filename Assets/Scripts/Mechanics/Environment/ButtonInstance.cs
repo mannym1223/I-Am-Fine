@@ -1,6 +1,7 @@
 using Platformer.Gameplay;
 using UnityEngine;
 using static Platformer.Core.Simulation;
+using UnityEngine.Events;
 
 namespace Platformer.Mechanics
 {
@@ -10,6 +11,7 @@ namespace Platformer.Mechanics
     public class ButtonInstance : MonoBehaviour
     {
 		public AudioClip tokenCollectAudio;
+        public UnityEvent[] onPressedEvents;
         
         internal Animator animator;
         internal bool pressed = false;
@@ -39,6 +41,16 @@ namespace Platformer.Mechanics
             var ev = Schedule<PlayerButtonCollision>();
 			ev.button = this;
 			ev.player = player;
+
+            BroadcastEvents();
 		}
+
+        protected void BroadcastEvents()
+        {
+            foreach (UnityEvent e in onPressedEvents)
+            {
+                e?.Invoke();
+            }
+        }
     }
 }
