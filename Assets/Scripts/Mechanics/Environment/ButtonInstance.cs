@@ -11,7 +11,7 @@ namespace Platformer.Mechanics
     public class ButtonInstance : MonoBehaviour
     {
 		public AudioClip tokenCollectAudio;
-        public UnityEvent[] onPressedEvents;
+        public UnityEvent onPressedEvent;
         
         internal Animator animator;
         internal bool pressed = false;
@@ -42,15 +42,9 @@ namespace Platformer.Mechanics
 			ev.button = this;
 			ev.player = player;
 
-            BroadcastEvents();
+            onPressedEvent?.Invoke();
 		}
 
-        protected void BroadcastEvents()
-        {
-            foreach (UnityEvent e in onPressedEvents)
-            {
-                e?.Invoke();
-            }
-        }
+        
     }
 }
