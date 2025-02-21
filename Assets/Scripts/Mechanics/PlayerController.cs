@@ -70,8 +70,8 @@ namespace Platformer.Mechanics
 
         public void TookDamage()
         {
-            MakeInvincible();
-            UpdateLookBasedOnHealth();
+			UpdateLookBasedOnHealth();
+			MakeInvincible();
             FlashPlayer();
         }
 
@@ -89,11 +89,12 @@ namespace Platformer.Mechanics
         protected void UpdateLookBasedOnHealth()
         {
             Color color = spriteRenderer.color;
-            color.r = Mathf.Min(255f, color.r + 1);
-			color.g = Mathf.Max(0f, color.g - 1);
-			color.b = Mathf.Max(0f, color.b - 1);
+            float healthRatio = (float)health.CurrentHP / (float)health.maxHP;
+            color.r = 1 - healthRatio;
+			color.g = healthRatio;
+			color.b = healthRatio;
 
-            spriteRenderer.color = color;
+			spriteRenderer.color = color;
 		}
 
         private IEnumerator BeginInvincibleCountdown()

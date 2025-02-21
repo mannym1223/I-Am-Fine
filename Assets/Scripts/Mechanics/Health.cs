@@ -20,6 +20,7 @@ namespace Platformer.Mechanics
         /// </summary>
         public bool IsAlive => currentHP > 0;
 
+        public int CurrentHP => currentHP;
         int currentHP;
 
         /// <summary>
