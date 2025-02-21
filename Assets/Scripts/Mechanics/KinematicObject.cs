@@ -159,8 +159,8 @@ namespace Platformer.Mechanics
                         if (hitBuffer[i].point.y < transform.position.y)
                         {
                             //We are airborne, but hit something above, so cancel vertical up and horizontal velocity.
-                            velocity.x *= 0;
-                            velocity.y = Mathf.Min(velocity.y, 0);
+                            //velocity.x *= 0;
+                            //velocity.y = Mathf.Min(velocity.y, 0);
                         }
 
                     }
