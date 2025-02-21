@@ -10,9 +10,9 @@ namespace Platformer.Gameplay
 {
 
     /// <summary>
-    /// Fired when a Player collides with an Enemy.
+    /// Fired when a Player takes damage.
     /// </summary>
-    /// <typeparam name="EnemyCollision"></typeparam>
+    /// <typeparam name="PlayerHurt"></typeparam>
     public class PlayerHurt : Simulation.Event<PlayerHurt>
     {
         public EnemyController enemy;
