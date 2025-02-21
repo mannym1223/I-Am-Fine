@@ -21786,12 +21786,12 @@ PrefabInstance:
     - target: {fileID: 2356346393365077761, guid: bb75e2932d84143429c7e4b79697c250,
         type: 3}
       propertyPath: maxAnimSpeed
-      value: 0.2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2356346393365077761, guid: bb75e2932d84143429c7e4b79697c250,
         type: 3}
       propertyPath: minAnimSpeed
-      value: 2
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5507381953897142272, guid: bb75e2932d84143429c7e4b79697c250,
         type: 3}

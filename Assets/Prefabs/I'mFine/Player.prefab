@@ -54,8 +54,10 @@ MonoBehaviour:
   gravityModifier: 5
   velocity: {x: 0, y: 0}
   jumpAudio: {fileID: 0}
-  respawnAudio: {fileID: 0}
+  respawnAudio: {fileID: 8300000, guid: 93fbb109633e844259ea828442bda0cb, type: 3}
   ouchAudio: {fileID: 0}
+  minAnimSpeed: 0
+  maxAnimSpeed: 0
   iFrames: 3
   flashDelay: 0.2
   ignoreWhileInvincible:
