@@ -32,7 +32,7 @@ namespace Platformer.Gameplay
 
 			player.Bounce(bounceVector);
 			player.health.Decrement();
-            player.MakeInvincible();
+            player.TookDamage();
 		}
 
     }

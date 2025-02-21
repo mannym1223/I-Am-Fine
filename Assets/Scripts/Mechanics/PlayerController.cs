@@ -24,6 +24,11 @@ namespace Platformer.Mechanics
         public float iFrames = 3f;
 
         /// <summary>
+        /// Time between player sprite flashing when hurt
+        /// </summary>
+        public float flashDelay;
+
+        /// <summary>
         /// Layers to ignore collision with when player is invincible
         /// </summary>
         public LayerMask ignoreWhileInvincible;
@@ -63,23 +68,73 @@ namespace Platformer.Mechanics
             ignoreMaskIntValue = (int)Mathf.Log(ignoreWhileInvincible.value, 2);
         }
 
-        public void MakeInvincible()
+        public void TookDamage()
+        {
+            MakeInvincible();
+            UpdateLookBasedOnHealth();
+            FlashPlayer();
+        }
+
+        protected void FlashPlayer()
+        {
+            StartCoroutine(BeginPlayerFlashing());
+        }
+
+        protected void MakeInvincible()
         {
 			collider2d.excludeLayers |= 1 << ignoreMaskIntValue;
 			StartCoroutine(BeginInvincibleCountdown());
         }
 
-        protected IEnumerator BeginInvincibleCountdown()
+        protected void UpdateLookBasedOnHealth()
         {
-            float count = 0f;
-            while (count < iFrames) 
-            {
-                yield return new WaitForFixedUpdate();
-                count += Time.deltaTime;
-            }
+            Color color = spriteRenderer.color;
+            color.r = Mathf.Min(255f, color.r + 1);
+			color.g = Mathf.Max(0f, color.g - 1);
+			color.b = Mathf.Max(0f, color.b - 1);
+
+            spriteRenderer.color = color;
+		}
+
+        private IEnumerator BeginInvincibleCountdown()
+        {
+            yield return BeginCountdown(iFrames);
 			collider2d.excludeLayers &= ~(1 << ignoreMaskIntValue);
 			yield return null; 
         }
+
+        private IEnumerator BeginPlayerFlashing()
+        {
+			float count = 0f;
+            float flashTime = 0f;
+            Color color = spriteRenderer.color;
+			while (count < iFrames)
+			{
+				yield return new WaitForFixedUpdate();
+				count += Time.deltaTime;
+                flashTime += Time.deltaTime;
+                if (flashTime > flashDelay)
+                {
+                    // alternate alpha
+                    color.a = color.a == 1f ? 0.5f : 1f;
+                    spriteRenderer.color = color;
+                    flashTime = 0f;
+                }
+			}
+            // make sure color is reset
+            color.a = 1f;
+            spriteRenderer.color = color;
+		}
+
+        private IEnumerator BeginCountdown(float timeToWait)
+        {
+			float count = 0f;
+			while (count < timeToWait)
+			{
+				yield return new WaitForFixedUpdate();
+				count += Time.deltaTime;
+			}
+		}
 
         protected override void Update()
         {
