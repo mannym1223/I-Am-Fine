@@ -18,6 +18,9 @@ namespace Platformer.Mechanics
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;
 
+        public float minAnimSpeed;
+        public float maxAnimSpeed;
+
         /// <summary>
         /// Invincibility time when player is hurt
         /// </summary>
@@ -66,15 +69,19 @@ namespace Platformer.Mechanics
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
             ignoreMaskIntValue = (int)Mathf.Log(ignoreWhileInvincible.value, 2);
+            if (animator != null) 
+            {
+                animator.speed = maxAnimSpeed;
+            }
         }
 
         public void TookDamage()
         {
+            UpdateAnimSpeedBasedOnHealth();
 			UpdateLookBasedOnHealth();
 			MakeInvincible();
             FlashPlayer();
         }
-
         protected void FlashPlayer()
         {
             StartCoroutine(BeginPlayerFlashing());
@@ -84,6 +91,14 @@ namespace Platformer.Mechanics
         {
 			collider2d.excludeLayers |= 1 << ignoreMaskIntValue;
 			StartCoroutine(BeginInvincibleCountdown());
+        }
+
+        protected void UpdateAnimSpeedBasedOnHealth()
+        {
+            if (animator != null)
+            {
+                animator.speed = Mathf.Max(minAnimSpeed, ((float)health.CurrentHP / health.maxHP) * maxAnimSpeed);
+            }
         }
 
         protected void UpdateLookBasedOnHealth()
@@ -208,9 +223,6 @@ namespace Platformer.Mechanics
                 spriteRenderer.flipX = false;
             else if (move.x < -0.01f)
                 spriteRenderer.flipX = true;
-
-            animator.SetBool("grounded", IsGrounded);
-            animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 
             targetVelocity = move * maxSpeed;
         }
