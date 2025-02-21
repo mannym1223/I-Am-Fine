@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5597432770418572414}
+  - component: {fileID: 1593902695007094237}
   - component: {fileID: 7929416876832279434}
   - component: {fileID: 476249105790990504}
   - component: {fileID: 7990114755153780292}
-  - component: {fileID: 1593902695007094237}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -35,6 +35,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1593902695007094237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7117479813069731984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d807e47a0afe8943abc1c99a0ab7b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tokenCollectAudio: {fileID: 8300000, guid: bf527d825758e5b4ca7b69f5a02d9a56, type: 3}
+  onPressedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &7929416876832279434
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -143,19 +159,3 @@ CircleCollider2D:
   m_Offset: {x: -0.009668112, y: -0.2030338}
   serializedVersion: 2
   m_Radius: 0.37800968
---- !u!114 &1593902695007094237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7117479813069731984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d807e47a0afe8943abc1c99a0ab7b63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tokenCollectAudio: {fileID: 8300000, guid: bf527d825758e5b4ca7b69f5a02d9a56, type: 3}
-  onPressedEvent:
-    m_PersistentCalls:
-      m_Calls: []
