@@ -19,6 +19,11 @@ namespace Platformer.Mechanics
         public AudioClip ouchAudio;
 
         /// <summary>
+        /// Invincibility time when player is hurt
+        /// </summary>
+        public float iFrames = 3f;
+
+        /// <summary>
         /// Max horizontal speed of the player.
         /// </summary>
         public float maxSpeed = 7;
@@ -49,6 +54,24 @@ namespace Platformer.Mechanics
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
+        }
+
+        public void MakeInvincible()
+        {
+			collider2d.excludeLayers |= 1 << LayerMask.NameToLayer("Hurtable");
+			StartCoroutine(BeginInvincibleCountdown());
+        }
+
+        protected IEnumerator BeginInvincibleCountdown()
+        {
+            float count = 0f;
+            while (count < iFrames) 
+            {
+                yield return new WaitForFixedUpdate();
+                count += Time.deltaTime;
+            }
+			collider2d.excludeLayers &= ~(1 << LayerMask.NameToLayer("Hurtable"));
+			yield return null; 
         }
 
         protected override void Update()

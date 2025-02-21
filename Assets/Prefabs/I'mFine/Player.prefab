@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8533947158508773457}
   - component: {fileID: 7455574243632308070}
   - component: {fileID: 8642708076279557043}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -56,6 +56,7 @@ MonoBehaviour:
   jumpAudio: {fileID: 8300000, guid: 67975c08d56ceb147bad38572d805aa8, type: 3}
   respawnAudio: {fileID: 8300000, guid: e18959d46b63f3c4c8cc020a433cf848, type: 3}
   ouchAudio: {fileID: 8300000, guid: 6c05149e5a2fba64ba172e25a61074b7, type: 3}
+  iFrames: 3
   maxSpeed: 12
   jumpTakeOffSpeed: 20
   jumpState: 0
