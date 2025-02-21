@@ -24,6 +24,12 @@ namespace Platformer.Mechanics
         public float iFrames = 3f;
 
         /// <summary>
+        /// Layers to ignore collision with when player is invincible
+        /// </summary>
+        public LayerMask ignoreWhileInvincible;
+        private int ignoreMaskIntValue;
+
+        /// <summary>
         /// Max horizontal speed of the player.
         /// </summary>
         public float maxSpeed = 7;
@@ -54,11 +60,12 @@ namespace Platformer.Mechanics
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
+            ignoreMaskIntValue = (int)Mathf.Log(ignoreWhileInvincible.value, 2);
         }
 
         public void MakeInvincible()
         {
-			collider2d.excludeLayers |= 1 << LayerMask.NameToLayer("Hurtable");
+			collider2d.excludeLayers |= 1 << ignoreMaskIntValue;
 			StartCoroutine(BeginInvincibleCountdown());
         }
 
@@ -70,7 +77,7 @@ namespace Platformer.Mechanics
                 yield return new WaitForFixedUpdate();
                 count += Time.deltaTime;
             }
-			collider2d.excludeLayers &= ~(1 << LayerMask.NameToLayer("Hurtable"));
+			collider2d.excludeLayers &= ~(1 << ignoreMaskIntValue);
 			yield return null; 
         }
 
