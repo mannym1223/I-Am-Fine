@@ -53,9 +53,14 @@ namespace Platformer.Mechanics
             while (currentHP > 0) Decrement();
         }
 
-        void Awake()
+        public void Spawn()
         {
             currentHP = maxHP;
+        }
+
+        void Awake()
+        {
+            Spawn();
         }
     }
 }

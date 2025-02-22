@@ -69,11 +69,14 @@ namespace Platformer.Mechanics
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
             ignoreMaskIntValue = (int)Mathf.Log(ignoreWhileInvincible.value, 2);
-            if (animator != null) 
-            {
-                animator.speed = maxAnimSpeed;
-            }
         }
+
+        public void ResetPlayer ()
+        {
+            health.Spawn();
+			UpdateAnimSpeedBasedOnHealth();
+			UpdateLookBasedOnHealth();
+		}
 
         public void TookDamage()
         {

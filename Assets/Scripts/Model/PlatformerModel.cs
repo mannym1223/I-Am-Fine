@@ -11,10 +11,14 @@ namespace Platformer.Model
     [System.Serializable]
     public class PlatformerModel
     {
+        public Cinemachine.CinemachineBrain cameraBrain;
+
         /// <summary>
         /// The virtual camera in the scene.
         /// </summary>
         public Cinemachine.CinemachineVirtualCamera virtualCamera;
+
+        public Cinemachine.CinemachineVirtualCamera spawnCamera;
 
         /// <summary>
         /// The main component which controls the player sprite, controlled 

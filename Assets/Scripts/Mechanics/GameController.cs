@@ -1,5 +1,7 @@
 using Platformer.Core;
+using Platformer.Gameplay;
 using Platformer.Model;
+using System.Collections;
 using UnityEngine;
 
 namespace Platformer.Mechanics
@@ -25,7 +27,12 @@ namespace Platformer.Mechanics
             Instance = this;
         }
 
-        void OnDisable()
+		private void Start()
+		{
+            StartCoroutine(BeginPlayerSpawn());
+		}
+
+		void OnDisable()
         {
             if (Instance == this) Instance = null;
         }
@@ -33,6 +40,16 @@ namespace Platformer.Mechanics
         void Update()
         {
             if (Instance == this) Simulation.Tick();
+        }
+
+        private IEnumerator BeginPlayerSpawn() 
+        { 
+            yield return new WaitForSeconds(3f);
+
+            model.player = Instantiate<PlayerController>(model.player);
+            Simulation.Schedule<PlayerSpawn>();
+
+            yield return null;
         }
     }
 }
