@@ -46,13 +46,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34b6612efd3c63e4db8cfc152bf80086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActive: 0
+  isOneWay: 0
   spriteRenderer: {fileID: 0}
   animator: {fileID: 0}
   collider2d: {fileID: 0}
-  isActive: 0
   direction: {x: 1, y: 0, z: 0}
   distance: 0.5
-  speed: 1
+  speed: 2
   activeOnStart: 0
   isLooping: 0
 --- !u!212 &4268932344804110042
@@ -143,7 +144,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.512, y: 0.512}
+    oldSize: {x: 0.5, y: 0.5}
     newSize: {x: 0.512, y: 0.512}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
