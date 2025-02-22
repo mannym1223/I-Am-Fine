@@ -32,6 +32,11 @@ namespace Platformer.Model
         public Transform spawnPoint;
 
         /// <summary>
+        /// Time until player is spawned into scene
+        /// </summary>
+        public float spawnDelay;
+
+        /// <summary>
         /// A global jump modifier applied to all initial jump velocities.
         /// </summary>
         public float jumpModifier = 1.5f;

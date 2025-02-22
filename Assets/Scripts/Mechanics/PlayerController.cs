@@ -71,13 +71,6 @@ namespace Platformer.Mechanics
             ignoreMaskIntValue = (int)Mathf.Log(ignoreWhileInvincible.value, 2);
         }
 
-        public void ResetPlayer ()
-        {
-            health.Spawn();
-			UpdateAnimSpeedBasedOnHealth();
-			UpdateLookBasedOnHealth();
-		}
-
         public void TookDamage()
         {
             UpdateAnimSpeedBasedOnHealth();

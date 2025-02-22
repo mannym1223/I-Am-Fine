@@ -44,10 +44,10 @@ namespace Platformer.Mechanics
 
         private IEnumerator BeginPlayerSpawn() 
         { 
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(model.spawnDelay);
 
-            model.player = Instantiate<PlayerController>(model.player);
-            Simulation.Schedule<PlayerSpawn>();
+            model.player = Instantiate<PlayerController>(model.player, model.spawnPoint.transform.position, model.spawnPoint.transform.rotation);
+            Simulation.Schedule<PlayerSpawned>();
 
             yield return null;
         }

@@ -14,9 +14,11 @@ namespace Platformer.Gameplay
         {
             var player = model.player;
             player.controlEnabled = true;
-            player.SetGravityActive(true);
-            model.virtualCamera.gameObject.SetActive(true);
-            model.spawnCamera.gameObject.SetActive(false);
+            //model.virtualCamera.gameObject.SetActive(true);
+            //model.spawnCamera.gameObject.SetActive(false);
+
+            model.virtualCamera.Priority = 11;
+			model.spawnCamera.Priority = 10;
 		}
     }
 }
