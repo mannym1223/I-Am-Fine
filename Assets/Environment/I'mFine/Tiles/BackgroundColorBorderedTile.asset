@@ -9,14 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9df11d2ad44624917bf3586aa9303279, type: 3}
-  m_Name: New Animated Tile
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: BackgroundColorBorderedTile
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: 21300000, guid: c36b0e54a8d8340759ab2f1394787f1f, type: 3}
-  - {fileID: 21300004, guid: c36b0e54a8d8340759ab2f1394787f1f, type: 3}
-  - {fileID: 21300010, guid: c36b0e54a8d8340759ab2f1394787f1f, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_MinSpeed: 1
   m_MaxSpeed: 1
   m_AnimationStartTime: 0
-  m_TileColliderType: 2
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+  m_TileAnimationFlags: 0
