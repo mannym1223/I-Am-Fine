@@ -29,7 +29,8 @@ namespace Platformer.Mechanics
 
 		private void Start()
 		{
-            StartCoroutine(BeginPlayerSpawn());
+			model.player = FindObjectOfType<PlayerController>();
+			Simulation.Schedule<PlayerSpawned>();
 		}
 
 		void OnDisable()
@@ -40,16 +41,6 @@ namespace Platformer.Mechanics
         void Update()
         {
             if (Instance == this) Simulation.Tick();
-        }
-
-        private IEnumerator BeginPlayerSpawn() 
-        { 
-            yield return new WaitForSeconds(model.spawnDelay);
-
-            model.player = Instantiate<PlayerController>(model.player, model.spawnPoint.transform.position, model.spawnPoint.transform.rotation);
-            Simulation.Schedule<PlayerSpawned>();
-
-            yield return null;
         }
     }
 }

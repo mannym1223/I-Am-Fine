@@ -16,9 +16,6 @@ namespace Platformer.Gameplay
             var player = model.player;
             player.collider2d.enabled = true;
             player.controlEnabled = false;
-            if (player.audioSource && player.respawnAudio)
-                player.audioSource.PlayOneShot(player.respawnAudio);
-            
 			player.jumpState = PlayerController.JumpState.Grounded;
 
 			model.virtualCamera.m_Follow = player.transform;
@@ -26,6 +23,8 @@ namespace Platformer.Gameplay
 
 			model.spawnCamera.m_Follow = player.transform;
 			model.spawnCamera.m_LookAt = player.transform;
+
+            Simulation.Schedule<EnablePlayerInput>();
 		}
     }
 }
