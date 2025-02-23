@@ -66,7 +66,7 @@ MonoBehaviour:
   ignoreWhileInvincible:
     serializedVersion: 2
     m_Bits: 64
-  maxSpeed: 12
+  maxSpeed: 10
   jumpTakeOffSpeed: 20
   jumpState: 0
   collider2d: {fileID: 8642708076279557043}
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffad43bb006db4856a9c527b89b48db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 10
+  maxHP: 15
   deathTimeline: {fileID: 0}
 --- !u!212 &8135268788188976644
 SpriteRenderer:

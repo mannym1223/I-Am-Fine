@@ -11,6 +11,7 @@ namespace Platformer.Mechanics
 
         public bool isActive;
         public bool isOneWay;
+        public bool oneWayCollideOnStart;
 
         [HideInInspector]
         public SpriteRenderer spriteRenderer;
@@ -19,15 +20,19 @@ namespace Platformer.Mechanics
 		[HideInInspector]
 		public Collider2D collider2d;
 
-        void Awake()
+		void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
             collider2d = GetComponent<Collider2D>();
-            if(isOneWay)
+            if(isOneWay && !oneWayCollideOnStart)
             {
                 collider2d.isTrigger = true;
             }
+            else if(oneWayCollideOnStart)
+            {
+				collider2d.isTrigger = false;
+			}
         }
 
         public virtual void ActivatePlatform() { }
