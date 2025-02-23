@@ -11,6 +11,7 @@ namespace Platformer.Mechanics
     public class ButtonInstance : MonoBehaviour
     {
 		public AudioClip tokenCollectAudio;
+        public bool pressOnStart; // for easier testing
         public UnityEvent onPressedEvent;
         
         internal Animator animator;
@@ -20,6 +21,15 @@ namespace Platformer.Mechanics
         {
             animator = GetComponent<Animator>();
         }
+
+		private void Start()
+		{
+            if (pressOnStart)
+            {
+                pressed = true;
+				onPressedEvent?.Invoke();
+			}
+		}
 
 		void OnTriggerEnter2D(Collider2D collider)
         {
