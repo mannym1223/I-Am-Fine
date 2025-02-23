@@ -356,6 +356,7 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: d9ef9c7e8110a6344951a92062731f54, type: 2}
     - {fileID: 11400000, guid: e89243e097096c741a21bc4b166a7094, type: 2}
+    - {fileID: 11400000, guid: e62cced3f2a3f7148af6b087239cc553, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -431,6 +432,32 @@ MonoBehaviour:
             m_IntArgument: 1
             m_FloatArgument: 0
             m_StringArgument: spawned
+            m_BoolArgument: 0
+          m_CallState: 1
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7455574243632308070}
+          m_TargetAssemblyTypeName: Platformer.Mechanics.Health, Assembly-CSharp
+          m_MethodName: Spawn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+        - m_Target: {fileID: 2356346393365077761}
+          m_TargetAssemblyTypeName: Platformer.Mechanics.PlayerController, Assembly-CSharp
+          m_MethodName: TookDamage
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
 --- !u!1001 &9148332147094925026

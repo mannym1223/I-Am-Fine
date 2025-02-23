@@ -6,7 +6,7 @@ namespace Platformer.Gameplay
 {
 
     /// <summary>
-    /// This event is triggered when the player character enters a trigger with a VictoryZone component.
+    /// This event is triggered when the player character triggers final button.
     /// </summary>
     /// <typeparam name="PlayerEnteredVictoryZone"></typeparam>
     public class PlayerEnteredVictoryZone : Simulation.Event<PlayerEnteredVictoryZone>
