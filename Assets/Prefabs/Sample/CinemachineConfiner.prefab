@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5102505034379151491}
-  - component: {fileID: 4661717346146757083}
+  - component: {fileID: 8620605757812908478}
   m_Layer: 0
   m_Name: CinemachineConfiner
   m_TagString: Untagged
@@ -32,8 +32,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &4661717346146757083
-BoxCollider2D:
+--- !u!60 &8620605757812908478
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -74,6 +74,10 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 30.37, y: 29.5}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -2.773808, y: 5.256834}
+      - {x: -4.2466702, y: -1.0641552}
+      - {x: 9.540867, y: -2.3744335}
+      - {x: 8.530966, y: 3.7144842}
+  m_UseDelaunayMesh: 0
