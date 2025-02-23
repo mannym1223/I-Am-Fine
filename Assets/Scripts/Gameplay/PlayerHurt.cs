@@ -18,6 +18,7 @@ namespace Platformer.Gameplay
         public EnemyController enemy;
         public PlayerController player;
         public AudioClip hurtAudio;
+        public float volume = 1f;
         public Vector2 bounceVector = new Vector2(1f, 1f);
 
         PlatformerModel model = GetModel<PlatformerModel>();
@@ -27,7 +28,7 @@ namespace Platformer.Gameplay
 			player = model.player;
 			if (hurtAudio != null)
 			{
-				AudioSource.PlayClipAtPoint(hurtAudio, player.transform.position);
+				AudioSource.PlayClipAtPoint(hurtAudio, player.transform.position, volume);
 			}
 
 			player.Bounce(bounceVector);

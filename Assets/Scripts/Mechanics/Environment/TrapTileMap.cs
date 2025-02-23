@@ -11,6 +11,7 @@ namespace Platformer.Mechanics
     public class TrapTileMap : MonoBehaviour
     {
         public AudioClip tileHitAudio;
+        public float volume = 1f;
 
         protected TilemapCollider2D tileCollider;
 
@@ -32,6 +33,7 @@ namespace Platformer.Mechanics
         {
 			var ev = Schedule<PlayerHurt>();
 			ev.hurtAudio = tileHitAudio;
+            ev.volume = volume;
             ev.bounceVector = Vector2.zero;
 			ev.player = player;
 		}
