@@ -1,6 +1,7 @@
 using System;
 using Platformer.Gameplay;
 using UnityEngine;
+using UnityEngine.Playables;
 using static Platformer.Core.Simulation;
 
 namespace Platformer.Mechanics
@@ -14,6 +15,8 @@ namespace Platformer.Mechanics
         /// The maximum hit points for the entity.
         /// </summary>
         public int maxHP = 1;
+
+        public PlayableDirector deathTimeline;
 
         /// <summary>
         /// Indicates if the entity should be considered 'alive'.
@@ -40,8 +43,8 @@ namespace Platformer.Mechanics
             currentHP = Mathf.Clamp(currentHP - 1, 0, maxHP);
             if (currentHP == 0)
             {
-                var ev = Schedule<HealthIsZero>();
-                ev.health = this;
+                var ev = Schedule<PlayerDeath>();
+                ev.deathTimeline = deathTimeline;
             }
         }
 
