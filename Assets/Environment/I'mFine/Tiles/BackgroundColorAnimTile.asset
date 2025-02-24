@@ -13,30 +13,34 @@ MonoBehaviour:
   m_Name: BackgroundColorAnimTile
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: 1006963706, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: 328373069, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: 1702451383, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: -1523002052, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: -1297749300, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: 1530253765, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: -1122190162, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: 817095700, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: 1923934274, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: 2078689801, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: 88151248, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: -897961866, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: -897961866, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: 88151248, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: 2078689801, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: 1923934274, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: 817095700, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: -1122190162, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: 1530253765, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: -1297749300, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: -1523002052, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: 1702451383, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: 328373069, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
-  - {fileID: 1006963706, guid: 510f882b88e522346b2e6f885e67a0dd, type: 3}
+  - {fileID: 48440995, guid: 75e231003f9cdb2479bc2da343f5a395, type: 3}
+  - {fileID: -2007666783, guid: 75e231003f9cdb2479bc2da343f5a395, type: 3}
+  - {fileID: 1827441802, guid: 75e231003f9cdb2479bc2da343f5a395, type: 3}
+  - {fileID: -547123866, guid: 75e231003f9cdb2479bc2da343f5a395, type: 3}
+  - {fileID: 632354206, guid: 75e231003f9cdb2479bc2da343f5a395, type: 3}
+  - {fileID: -1431849079, guid: cc8da42ed0f79ba42af0e8a9b583cb4c, type: 3}
+  - {fileID: -1100098860, guid: cc8da42ed0f79ba42af0e8a9b583cb4c, type: 3}
+  - {fileID: 870409812, guid: cc8da42ed0f79ba42af0e8a9b583cb4c, type: 3}
+  - {fileID: -32431263, guid: cc8da42ed0f79ba42af0e8a9b583cb4c, type: 3}
+  - {fileID: -100821862, guid: cc8da42ed0f79ba42af0e8a9b583cb4c, type: 3}
+  - {fileID: -1239368110, guid: cc8da42ed0f79ba42af0e8a9b583cb4c, type: 3}
+  - {fileID: 577248183, guid: a752a3979d6daca4f97bbe7b0922cc6f, type: 3}
+  - {fileID: 1243814885, guid: a752a3979d6daca4f97bbe7b0922cc6f, type: 3}
+  - {fileID: -876486637, guid: 0373e270db2825d4c8edec5622295d46, type: 3}
+  - {fileID: -876486637, guid: 0373e270db2825d4c8edec5622295d46, type: 3}
+  - {fileID: 1243814885, guid: a752a3979d6daca4f97bbe7b0922cc6f, type: 3}
+  - {fileID: 577248183, guid: a752a3979d6daca4f97bbe7b0922cc6f, type: 3}
+  - {fileID: -1239368110, guid: cc8da42ed0f79ba42af0e8a9b583cb4c, type: 3}
+  - {fileID: -100821862, guid: cc8da42ed0f79ba42af0e8a9b583cb4c, type: 3}
+  - {fileID: -32431263, guid: cc8da42ed0f79ba42af0e8a9b583cb4c, type: 3}
+  - {fileID: 870409812, guid: cc8da42ed0f79ba42af0e8a9b583cb4c, type: 3}
+  - {fileID: -1100098860, guid: cc8da42ed0f79ba42af0e8a9b583cb4c, type: 3}
+  - {fileID: -1431849079, guid: cc8da42ed0f79ba42af0e8a9b583cb4c, type: 3}
+  - {fileID: 632354206, guid: 75e231003f9cdb2479bc2da343f5a395, type: 3}
+  - {fileID: -547123866, guid: 75e231003f9cdb2479bc2da343f5a395, type: 3}
+  - {fileID: 1827441802, guid: 75e231003f9cdb2479bc2da343f5a395, type: 3}
+  - {fileID: -2007666783, guid: 75e231003f9cdb2479bc2da343f5a395, type: 3}
+  - {fileID: 48440995, guid: 75e231003f9cdb2479bc2da343f5a395, type: 3}
   m_MinSpeed: 1
   m_MaxSpeed: 1
   m_AnimationStartTime: 0
