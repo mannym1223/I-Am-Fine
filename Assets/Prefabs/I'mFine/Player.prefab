@@ -61,7 +61,7 @@ MonoBehaviour:
   ouchAudio: {fileID: 0}
   minAnimSpeed: 0.2
   maxAnimSpeed: 2
-  iFrames: 3
+  iFrames: 1.5
   flashDelay: 0.2
   ignoreWhileInvincible:
     serializedVersion: 2
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffad43bb006db4856a9c527b89b48db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 15
+  maxHP: 10
   deathTimeline: {fileID: 0}
 --- !u!212 &8135268788188976644
 SpriteRenderer:
